@@ -1,0 +1,367 @@
+﻿/* to do:
+- font embedding
+- field span padding left with icons
+*/
+
+@font-face {
+	font-family: CantarellRegular;
+	src: url(Cantarell-Regular.ttf);
+}
+@font-face {
+	font-family: CantarellBold;
+	src: url(Cantarell-Bold.ttf);
+}
+@font-face {
+	font-family: CantarellOblique;
+	src: url(Cantarell-Oblique.ttf);
+}
+@font-face {
+	font-family: UbuntuRegular;
+	src: url(Ubuntu-Regular.ttf);
+}
+@font-face {
+	font-family: UbuntuBold;
+	src: url(Ubuntu-B-hinting.ttf);
+}
+@font-face {
+	font-family: UbuntuLight;
+	src: url(Ubuntu-L-hinting.ttf);
+}
+@font-face {
+	font-family: UbuntuItalic;
+	src: url(Ubuntu-Italic.ttf);
+}
+@font-face {
+	font-family: UbuntuLightItalic;
+	src: url(Ubuntu-LightItalic.ttf);
+}
+@font-face {
+	font-family: UbuntuMediumItalic;
+	src: url(Ubuntu-MI-hinting.ttf);
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 2mm;
+	min-width: 240mm;
+	min-height: 300mm;
+	width: auto;
+	height: auto;
+	background-color: hsl(0, 0%, 35%);
+}
+
+#fixed {
+	display: block;
+	width: 10mm;
+	height: 10mm;
+	position: fixed;
+	bottom: 8mm;
+	right: 12mm;
+	
+	font-family: UbuntuBold;
+	font-size: 8mm;
+	
+	text-align: center;
+	line-height: 10mm;
+	color: hsl(0, 0%, 45%);
+	
+	background-color: hsl(0, 0%, 25%);
+	border-radius: 50%;
+	cursor: default;
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#fixed:hover {
+	color: hsl(0, 0%, 65%);
+	
+	background-color: hsl(0, 0%, 15%);
+}
+
+#help {
+	visibility: hidden;
+	display: block;
+	width: 60mm;
+	height: auto;
+	min-height: 17mm;
+	position: fixed;
+	bottom: 5mm;
+	right: 15mm;
+	margin-right: 10mm;
+	padding: 3mm;
+	padding-bottom: 3mm;
+	padding-top: 2mm;
+	
+	font-family: UbuntuLight;
+	font-size: 3.5mm;
+	
+	text-align: justify;
+	line-height: 120%;
+	
+	background-color: hsl(0, 0%, 15%);
+	border-radius: 3mm;
+}
+
+#backplate {
+	position: fixed;
+	bottom: 5mm;
+	right: 10mm;
+	width: 17mm;
+	height: 40mm;
+	visibility: hidden;
+	
+	background: transparent;
+}
+
+#fixed:hover #backplate {
+	visibility: visible;
+}
+
+#pdf {
+	display: block;
+	padding: 0mm;
+	padding-top: 1.2mm;
+	font-size: 4.5mm;
+	font-family: UbuntuRegular;
+	
+	text-align: center;
+	line-height: 100%;
+	color: hsl(0, 0%, 80%);
+}
+
+#triangle {
+	display: block;
+	position: fixed;
+	bottom: 10mm;
+	right: 19mm;
+	
+	border-top: 3mm solid hsla(0, 0%, 15%, 0.01);
+	border-bottom: 3mm solid hsla(0, 0%, 15%, 0.01);
+	border-left: 2mm solid hsl(0, 0%, 15%);
+	border-right: 4mm solid hsla(0, 0%, 15%, 0.01);
+}
+
+#fixed:hover #help {
+	visibility: visible;
+}
+
+main {
+	width: 210mm;
+	height: 297mm;
+	margin: auto;
+	padding: 5mm;
+	
+	border-style: solid;
+	border-width: 0.3mm;
+	border-color: rgb(0, 0, 0);
+	
+	box-shadow: 1.5mm 1.5mm 2mm 0mm rgba(0, 0, 0, 0.5);
+	
+	background-color: hsl(0, 0%, 100%);
+	
+	font-family: UbuntuRegular;
+}
+
+#pad {
+	height: 100%;
+	box-sizing: content-box;
+}
+
+#pad > * {
+	padding: 3mm;
+}
+
+h1 {
+	font-size: 8.6mm;
+	font-family: CantarellRegular;
+	letter-spacing: 0mm;
+}
+
+header:hover h1 {
+	color: hsla(0, 80%, 35%, 1);
+}
+
+_:-moz-tree-row(hover), h1 {
+    letter-spacing: -0.5mm;
+}
+
+#image {
+	width: 31mm;
+	height: 31mm;
+	
+	display: inline-block;
+	vertical-align: middle;
+	margin: 2mm;
+	margin-left: 0mm;
+	
+	background-image: radial-gradient(hsla(0, 0%, 100%, 0) 40%, white 70%), url('cv.jpg');
+	background-size: 31mm 31mm, 31mm 31mm;
+	background-position: 0mm 0mm, 0.5mm 1mm;
+	background-clip: border-box;
+	background-origin: border-box;
+	
+	border-radius: 50%;
+	border: 2mm solid white;
+	
+	filter: grayscale(100%) contrast(150%) brightness(110%);
+	
+	cursor: pointer;
+}
+
+header:hover #image {
+	background-image: url('cv.jpg');
+	background-size: 31mm 31mm;
+	background-position: 0.5mm 1mm;
+	filter: grayscale(30%) contrast(130%) brightness(120%);
+}
+
+#general {
+	width: auto;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: -2mm;
+	text-align: center;
+}
+
+#description {
+	margin-top: -1.5mm;
+	font-family: CantarellOblique;
+	font-size: 4mm;
+	color: hsla(0, 0%, 25%, 1);
+}
+
+#body {
+	height: calc(100% - 27mm - 7mm - 2 * 3mm);
+	margin-top: 3mm;
+}
+
+#left-column {
+	width: 48%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#right-column {
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#rule {
+	width: 0.4mm;
+	height: 98%;
+	box-sizing: content-box;
+	
+	padding: 0mm;
+	
+	display: inline-block;
+	vertical-align: middle;
+	background: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(0, 80%, 35%, 1) 20%);
+}
+
+section {
+	box-sizing: border-box;
+	padding: 1mm;
+}
+
+.part {
+	padding: 1.5mm;
+	padding-left: 0mm;
+}
+
+.part * {
+	padding: 1.5mm;
+	padding-left: 0mm;
+	padding-right: 0mm;
+	line-height: 130%;
+}
+
+#info {
+	font-family: UbuntuLightItalic;
+	font-size: 3.7mm;
+	
+	text-align: justify;
+	
+	color: hsla(0, 0%, 25%, 1);
+}
+
+.contact {
+	font-family: UbuntuLightItalic;
+	font-size: 3.5mm;
+	
+	color: hsla(0, 0%, 0%, 1);
+}
+
+.icon {
+	width: 5mm;
+	height: 5mm;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#bdicon {
+	background-image: url('icons-07.png');
+	background-size: 5mm 5mm;
+}
+
+.part h2 {
+	padding-top: 3mm;
+	padding-bottom: 0mm;
+	font-size: 5mm;
+	font-family: CantarellRegular;
+	letter-spacing: 0.25mm;
+	
+	color: hsla(0, 80%, 35%, 1);
+}
+
+.part:hover h2 {
+	color: hsla(0, 80%, 50%, 1);
+}
+
+h3 {
+	font-size: 3.3mm;
+	font-family: UbuntuMediumItalic;
+	font-weight: normal;
+	letter-spacing: 0.25mm;
+}
+
+.part:hover h3 {
+	color: hsla(0, 80%, 50%, 1);
+}
+
+.part span, .part sup {
+	padding: 0mm;
+}
+
+.sub {
+	padding: 0mm;
+	padding-left: 5mm;
+	
+	font-family: UbuntuRegular;
+	font-size: 3.5mm;
+}
+
+.field {
+	font-family: UbuntuLightItalic;
+	font-size: 3.3mm;
+	color: hsl(0, 0%, 25%);
+}
+
+.subtitle {
+	margin-top: -3mm;
+	margin-bottom: 1.5mm;
+	padding: 0mm;
+}
+
+::selection {
+	background-color: hsla(0, 80%, 30%, 1);
+	color: hsl(0, 0%, 100%);
+}
