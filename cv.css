@@ -172,11 +172,16 @@ main {
 
 #pad {
 	height: 100%;
+	display: flex;
+	flex-direction: column;
+	fl
 	box-sizing: content-box;
 }
 
 #pad > * {
-	padding: 3mm;
+	padding: 2mm;
+	padding-top: 0mm;
+	padding-bottom: 0mm;
 }
 
 h1 {
@@ -194,22 +199,22 @@ _:-moz-tree-row(hover), h1 {
 }
 
 #image {
-	width: 31mm;
-	height: 31mm;
+	width: 30mm;
+	height: 30mm;
 	
 	display: inline-block;
 	vertical-align: middle;
 	margin: 2mm;
 	margin-left: 0mm;
 	
-	background-image: radial-gradient(hsla(0, 0%, 100%, 0) 40%, white 70%), url('cv.jpg');
-	background-size: 31mm 31mm, 31mm 31mm;
-	background-position: 0mm 0mm, 0.5mm 1mm;
+	background-image: radial-gradient(hsla(0, 0%, 100%, 0) 40%, white 72%), url('cv.jpg');
+	background-size: 30mm 30mm, 30mm 30mm;
+	background-position: 0mm 0mm, 0.5mm 0.5mm;
 	background-clip: border-box;
 	background-origin: border-box;
 	
 	border-radius: 50%;
-	border: 2mm solid white;
+	border: 1mm solid white;
 	
 	filter: grayscale(100%) contrast(150%) brightness(110%);
 	
@@ -218,8 +223,8 @@ _:-moz-tree-row(hover), h1 {
 
 header:hover #image {
 	background-image: url('cv.jpg');
-	background-size: 31mm 31mm;
-	background-position: 0.5mm 1mm;
+	background-size: 30mm 30mm;
+	background-position: 0.5mm 0.5mm;
 	filter: grayscale(30%) contrast(130%) brightness(120%);
 }
 
@@ -239,41 +244,50 @@ header:hover #image {
 }
 
 #body {
-	height: calc(100% - 27mm - 7mm - 2 * 3mm);
-	margin-top: 3mm;
+	flex-grow: 1;
+	display: flex;
 }
 
 #left-column {
-	width: 48%;
+	width: 49.5%;
 	display: inline-block;
 	vertical-align: top;
 }
 
 #right-column {
 	width: 40%;
+	padding-left: 3mm;
 	display: inline-block;
 	vertical-align: top;
 }
 
 #rule {
 	width: 0.4mm;
-	height: 98%;
 	box-sizing: content-box;
 	
 	padding: 0mm;
 	
+	align-items: stretch;
+	
 	display: inline-block;
 	vertical-align: middle;
 	background: linear-gradient(hsla(0, 0%, 100%, 0) 0%, hsla(0, 80%, 35%, 1) 20%);
+	
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 section {
 	box-sizing: border-box;
 	padding: 1mm;
+	padding-right: 2mm;
 }
 
 .part {
 	padding: 1.5mm;
+	padding-top: 3.5mm;
 	padding-left: 0mm;
 }
 
@@ -296,24 +310,89 @@ section {
 .contact {
 	font-family: UbuntuLightItalic;
 	font-size: 3.5mm;
+	padding: 0.5mm;
 	
 	color: hsla(0, 0%, 0%, 1);
+}
+
+.contain {
+	display: flex;
 }
 
 .icon {
 	width: 5mm;
 	height: 5mm;
+	position: relative;
+	top: -0.5mm;
+	margin: 0mm;
+	margin-left: 5mm;
+	margin-right: 1.5mm;
+	padding: 0mm;
 	display: inline-block;
-	vertical-align: middle;
+	
+	background-size: 5mm 5mm;
+	background-repeat: no-repeat;
+	
+	filter: grayscale(100%);
+}
+
+.lnk {
+	display: inline-block;
+	margin: 0mm;
+	padding: 0mm;
+	width: auto;
 }
 
 #bdicon {
 	background-image: url('icons-07.png');
-	background-size: 5mm 5mm;
+}
+
+#emicon {
+	background-image: url('icons-06.png');
+}
+
+#telicon {
+	background-image: url('icons-05.png');
+}
+
+#adricon {
+	background-image: url('icons-04.png');
+}
+
+#fbicon {
+	background-image: url('icons-01.png');
+}
+
+#liicon {
+	background-image: url('icons-02.png');
+}
+
+#giticon {
+	background-image: url('icons-03.png');
+}
+
+.contact a {
+	margin: 0mm;
+	padding: 0mm;
+	text-decoration: none;
+	color: inherit;
+}
+
+.contact a:hover {
+	color: hsla(0, 80%, 50%, 1);
+	font-weight: bold;
+}
+
+.contain:hover .icon {
+	filter: none;
+}
+
+_:-moz-tree-row(hover), .contact a:hover {
+    letter-spacing: -0.28mm;
 }
 
 .part h2 {
-	padding-top: 3mm;
+	padding-top: 0mm;
 	padding-bottom: 0mm;
 	font-size: 5mm;
 	font-family: CantarellRegular;
@@ -326,11 +405,12 @@ section {
 	color: hsla(0, 80%, 50%, 1);
 }
 
-h3 {
+.part h3 {
 	font-size: 3.3mm;
 	font-family: UbuntuMediumItalic;
 	font-weight: normal;
 	letter-spacing: 0.25mm;
+	padding-bottom: 0mm;
 }
 
 .part:hover h3 {
@@ -343,7 +423,7 @@ h3 {
 
 .sub {
 	padding: 0mm;
-	padding-left: 5mm;
+	padding-left: 7.7mm;
 	
 	font-family: UbuntuRegular;
 	font-size: 3.5mm;
@@ -356,12 +436,32 @@ h3 {
 }
 
 .subtitle {
-	margin-top: -3mm;
-	margin-bottom: 1.5mm;
+	margin-top: -1.5mm;
 	padding: 0mm;
 }
 
 ::selection {
 	background-color: hsla(0, 80%, 30%, 1);
 	color: hsl(0, 0%, 100%);
+}
+
+@media print {
+@page {
+	size: A4;
+	margin: 0mm;
+}
+#fixed {
+	display: none;
+}
+
+html, body {
+	width: 210mm;
+	height: 297mm;
+	background-color: rgb(255, 255, 255);
+}
+
+main {
+	width: 210mm;
+	height: 297mm;
+}
 }
